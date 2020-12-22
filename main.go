@@ -3,10 +3,11 @@ package main
 import (
 	"net/http"
 
-	"go-wechat/mp"
+	"go-wechat/ctr"
 )
 
 func main() {
-	http.HandleFunc("/message", mp.Message)
+	http.HandleFunc("/getAccessToken", ctr.GetAccessToken)
+	http.HandleFunc("/message", ctr.Message)
 	http.ListenAndServe(":8011", nil)
 }
